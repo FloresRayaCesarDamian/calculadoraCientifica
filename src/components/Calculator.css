@@ -1,0 +1,150 @@
+/* Grid */
+.calculadora {
+  margin-top: 5%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0d; /* Fondo más oscuro */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.calculadora:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.display {
+  padding: 10px;
+  background: #0a0a0a; /* Fondo negro más profundo */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+  grid-column: span 2; /* Asegura que ocupe el tamaño de dos columnas */
+}
+
+.display input {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100px; /* Altura aumentada para mayor legibilidad */
+  font-size: 32px; /* Tamaño de fuente más grande */
+  padding: 15px; /* Aumento de padding */
+  text-align: right;
+  box-shadow: inset 0px 3px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.display input:focus {
+  box-shadow: inset 0px 4px 12px rgba(0, 0, 0, 0.6);
+  transform: scale(1.02);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  background-color: #0d0d0d;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #232323; /* Fondo gris oscuro */
+  color: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px; /* Esquinas más redondeadas */
+  cursor: pointer;
+  font-size: 20px; /* Tamaño de fuente más grande */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background-color: #3d3d3d; /* Color más brillante en hover */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px) scale(1.03);
+}
+
+button:active {
+  background-color: #444;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+}
+
+/* Botón de igual en verde fuerte */
+button.igual {
+  grid-column: span 2; /* Este botón ocupará el ancho de 5 columnas */
+  background-color: #32CD32; /* Verde fuerte */
+  font-size: 22px; /* Aumento de tamaño de fuente */
+  padding: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+button.igual:hover {
+  background-color: #28a745;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+button.delete {
+  background-color: #8b2b22; /* Rojo más oscuro */
+}
+
+button.delete:hover {
+  background-color: #7a1e18; /* Rojo aún más oscuro */
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Botones de operadores en verde oscuro */
+button.operator {
+  background-color: #2d702d; /* Verde oscuro */
+}
+
+button.operator:hover {
+  background-color: #2c601c; /* Verde más oscuro */
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+button.number {
+  background-color: #2c3e50; /* Azul oscuro */
+}
+
+button.number:hover {
+  background-color: #1f2c3a;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Transición suave y efectos en botones */
+button, .calculadora, .display input {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto de brillo en los bordes de los botones */
+button:hover {
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2), 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fondo y fuentes */
+body {
+  background-color: #0a0a0a;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
